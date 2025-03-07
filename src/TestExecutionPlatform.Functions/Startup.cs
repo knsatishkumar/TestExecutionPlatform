@@ -7,12 +7,12 @@ using Microsoft.Identity.Web;
 using System;
 using System.IO;
 using TestExecutionPlatform.Core.Services;
-using TestExecutionPlatform.Core.Services.Kubernetes;
+using TestExecutionPlatform.Core.Services.Containers;
 using TestExecutionPlatform.Core.Services.Messaging;
 using TestExecutionPlatform.Core.Services.Storage;
 using TestExecutionPlatform.Core.Services.Monitoring;
-using Microsoft.IdentityModel.Abstractions;
 using System.Net.Http;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 [assembly: FunctionsStartup(typeof(TestExecutionPlatform.Functions.Startup))]
 
