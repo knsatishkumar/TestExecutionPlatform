@@ -110,6 +110,7 @@ namespace TestExecutionPlatform.Core.Services
 
                 if (schedule != null)
                 {
+                    /*TODO:PENDING
                     // Parse string lists back to collections
                     if (!string.IsNullOrEmpty(schedule.DaysOfWeek))
                     {
@@ -120,6 +121,7 @@ namespace TestExecutionPlatform.Core.Services
                     {
                         schedule.DaysOfMonth = schedule.DaysOfMonth.Split(',').Select(int.Parse).ToList();
                     }
+                    */
                 }
 
                 return schedule;
@@ -140,6 +142,7 @@ namespace TestExecutionPlatform.Core.Services
 
                 foreach (var schedule in schedules)
                 {
+                    /*TODO:PENDING
                     // Parse string lists back to collections
                     if (!string.IsNullOrEmpty(schedule.DaysOfWeek))
                     {
@@ -160,6 +163,7 @@ namespace TestExecutionPlatform.Core.Services
                     }
 
                     result.Add(schedule);
+                    */
                 }
 
                 return result;
@@ -287,6 +291,7 @@ namespace TestExecutionPlatform.Core.Services
 
                 foreach (var schedule in schedules)
                 {
+                    /*TODO:PENDING
                     // Parse string lists back to collections
                     if (!string.IsNullOrEmpty(schedule.DaysOfWeek))
                     {
@@ -310,6 +315,7 @@ namespace TestExecutionPlatform.Core.Services
                     {
                         dueSchedules.Add(schedule);
                     }
+                    */
                 }
 
                 return dueSchedules;

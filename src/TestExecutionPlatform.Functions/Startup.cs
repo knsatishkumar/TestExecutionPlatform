@@ -33,10 +33,10 @@ namespace TestExecutionPlatform.Functions
             // Add HttpClient for webhooks
             builder.Services.AddHttpClient();
 
-            // Configure authentication
-            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationDefaults)
-                .AddMicrosoftIdentityWebApi(configuration.GetSection("AzureAd"));
-
+            // Configure authentication            
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddMicrosoftIdentityWebApi(configuration.GetSection("AzureAd"));
+            
             // Configure authorization
             builder.Services.AddAuthorization(options =>
             {

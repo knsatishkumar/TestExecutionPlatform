@@ -226,7 +226,9 @@ namespace TestExecutionPlatform.Core.Services.Monitoring
                     };
 
                     // Get count of pods and jobs in this namespace
+                    var pods = await _kubernetesProvider.ListPodsAsync(ns);
                     int namespacePodCount = pods.Count(p => p.Metadata.NamespaceProperty == ns);
+                    var jobs = await _kubernetesProvider.ListJobsAsync(ns);
                     int namespaceJobCount = jobs.Count(j => j.Metadata.NamespaceProperty == ns);
 
                     await _alertService.EvaluateMetricAsync("Kubernetes.Namespace.Pods", namespacePodCount, namespaceDimensions);

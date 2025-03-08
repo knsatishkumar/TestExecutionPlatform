@@ -252,12 +252,12 @@ namespace TestExecutionPlatform.Core.Services
             _logger.LogInformation($"Completed job {jobId} with status {status}");
         }
 
-        private (int TestsPassed, int TestsFailed, int TestsSkipped, List<object> TestResults) ParseTestResults(string testResultsXml, string jobId)
+        private (int TestsPassed, int TestsFailed, int TestsSkipped, List<TestResult> TestResults) ParseTestResults(string testResultsXml, string jobId)
         {
             int testsPassed = 0;
             int testsFailed = 0;
             int testsSkipped = 0;
-            var testResults = new List<object>();
+            var testResults = new List<TestResult>();
 
             try
             {
@@ -302,7 +302,7 @@ namespace TestExecutionPlatform.Core.Services
                             break;
                     }
 
-                    testResults.Add(new
+                    testResults.Add(new TestResult
                     {
                         Id = Guid.NewGuid().ToString(),
                         JobId = jobId,
